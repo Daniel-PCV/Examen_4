@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="Examen4.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1059"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title=".Browsables" custom_title="0" dock_id="1" table="0,10:Browsables"/><dock_state state="000000ff00000000fd0000000100000002000005bb0000038ffc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005bb0000011e00ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings><table schema="main" name="Clientes" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="63"/><column index="2" value="52"/><column index="3" value="45"/><column index="4" value="55"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Detalles_Pedido" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="63"/><column index="2" value="76"/><column index="3" value="57"/><column index="4" value="55"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table><table schema="main" name="Productos" show_row_id="0" encoding="" plot_x_axis="" unlock_view_pk="_rowid_" freeze_columns="0"><sort/><column_widths><column index="1" value="76"/><column index="2" value="63"/><column index="3" value="55"/><column index="4" value="39"/></column_widths><filter_values/><conditional_formats/><row_id_formats/><display_formats/><hidden_columns/><plot_y_axes/><global_filter/></table></browse_table_settings></tab_browse><tab_sql><sql name="SQL 1*">
+-- INSERT INTO Clientes (nombre, correo, telefono) VALUES
+--     ('Ana López', 'ana@example.com', '555-1234'),
+--     ('Carlos Ruiz', 'carlos@example.com', '555-5678');
+
+
+-- INSERT INTO Productos (nombre, precio, stock) VALUES
+--     ('Laptop', 1200.50, 10),
+--     ('Mouse', 25.99, 50),
+--     ('Teclado', 45.75, 30);
+
+
+-- INSERT INTO Pedidos (id_cliente, total_compra) VALUES (1, 1271.25);
+
+
+-- INSERT INTO Detalles_Pedido (id_pedido, id_producto, cantidad, subtotal) VALUES
+--     (1, 1, 1, 1200.50),  -- Laptop
+--     (1, 2, 2, 51.98);     -- Mouse (2 unidades)
+
+--FUNCIONES!
+-- SELECT * FROM Clientes;
+
+-- SELECT Pedidos.id_pedido, Clientes.nombre, Pedidos.fecha, Pedidos.total_compra
+-- FROM Pedidos
+-- INNER JOIN Clientes ON Pedidos.id_cliente = Clientes.id_cliente;
+
+-- SELECT 
+--     Pedidos.id_pedido,
+--     Productos.nombre AS producto,
+--     Detalles_Pedido.cantidad,
+--     Detalles_Pedido.subtotal
+-- FROM Detalles_Pedido
+-- INNER JOIN Pedidos ON Detalles_Pedido.id_pedido = Pedidos.id_pedido
+-- INNER JOIN Productos ON Detalles_Pedido.id_producto = Productos.id_producto;</sql><current_tab id="0"/></tab_sql></sqlb_project>
